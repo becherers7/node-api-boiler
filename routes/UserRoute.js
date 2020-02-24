@@ -9,7 +9,7 @@ module.exports = app => {
 
   app.get(baseUrl + "/:id", users.findOne);
 
-  app.put(baseUrl + "/:id", users.update);
+  app.put(baseUrl + "/", users.update);
 
   app.delete(baseUrl + "/:id", users.delete);
 };

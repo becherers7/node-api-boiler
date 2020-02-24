@@ -63,18 +63,17 @@ exports.findOne = (req, res) => {
     });
   });
 };
-
+// Refactor this
 exports.update = (req, res) => {
-  let user_id = req.params;
   let user = req.body;
-  if (!user_id || !user) {
+  if (!user) {
     return res
       .status(400)
       .send({ error: user, message: "Please provide user and user_id" });
   }
   connection.query(
-    "UPDATE users SET user = ? WHERE id = ?",
-    [user, user_id],
+    "UPDATE users SET first_name=?, last_name=?, career=? WHERE id=?",
+    [user.first_name, user.last_name, user.career, user.id],
     function(error, results, fields) {
       if (error) throw error;
       return res.send({
