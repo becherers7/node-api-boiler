@@ -1,11 +1,5 @@
 let mysql = require("mysql");
-let connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  port: 3306,
-  database: "node_api"
-});
+let connection = require("../../config/mySqlConfig").connection;
 
 exports.create = (req, res) => {
   let user = req.body;
@@ -86,13 +80,13 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  let user_id = req.params;
+  let user_id = req.params.id;
   if (!user_id) {
     return res
       .status(400)
       .send({ error: true, message: "Please provide user_id" });
   }
-  connection.query("DELETE FROM users WHERE id=?", [user_id], function(
+  connection.query("DELETE FROM users WHERE id=?", user_id, function(
     error,
     results,
     fields

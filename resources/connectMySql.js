@@ -1,12 +1,5 @@
 let mysql = require("mysql");
-let connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  port: 3306,
-  database: "node_api",
-  multipleStatements: true
-});
+let connection = require("../config/mySqlConfig").connection;
 
 // connect to the MySQL
 exports.default = () => {
@@ -39,11 +32,5 @@ exports.default = () => {
         console.log(err.message);
       }
     });
-
-    // connection.end(function(err) {
-    //   if (err) {
-    //     return console.log(err.message);
-    //   }
-    // });
   });
 };
