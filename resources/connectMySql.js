@@ -1,7 +1,6 @@
 let mysql = require("mysql");
 let connection = require("../config/mySqlConfig").connection;
 
-// connect to the MySQL
 exports.default = () => {
   connection.connect(function(err) {
     if (err) {

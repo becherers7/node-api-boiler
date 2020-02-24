@@ -57,7 +57,7 @@ exports.findOne = (req, res) => {
     });
   });
 };
-// Refactor this
+
 exports.update = (req, res) => {
   let user = req.body;
   if (!user) {

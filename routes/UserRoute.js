@@ -1,5 +1,5 @@
 module.exports = app => {
-  // const users = require("../controllers/UserController.js");
+  // const users = require("../controllers/mongo/UserController.js");
   const users = require("../controllers/sql/UserController.js");
   let baseUrl = "/users";
 

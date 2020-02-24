@@ -6,7 +6,6 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//Enable CORS for all HTTP methods
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
@@ -17,12 +16,11 @@ app.use(function(req, res, next) {
   next();
 });
 
-// Configuring the database
 const config = require("./config/config.js");
 //
 require("./routes/UserRoute")(app);
 connection.default();
-// default route
+
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to node api boiler" });
 });
