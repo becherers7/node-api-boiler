@@ -7,9 +7,9 @@ module.exports = app => {
 
   app.get(baseUrl, users.findAll);
 
-  app.get(baseUrl + "/:userId", users.findOne);
+  app.get(baseUrl + "/:id", users.findOne);
 
-  app.put(baseUrl + "/:userId", users.update);
+  app.put(baseUrl + "/:id", users.update);
 
-  app.delete(baseUrl + "/:userId", users.delete);
+  app.delete(baseUrl + "/:id", users.delete);
 };

@@ -1,10 +1,9 @@
 const userSchema = new Schema(
   {
+    id: Integer,
     firstName: String,
     lastName: String,
-    email: String,
-    password: String,
-    permissionLevel: Number
+    career: String
   },
   {
     timestamps: true
