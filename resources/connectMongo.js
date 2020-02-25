@@ -7,7 +7,7 @@ exports.default = () => {
   dbConnection();
   const connection = mongoose.connection;
   connection.once("open", function() {
-    console.log("MongoDB successfully about to be created");
+    console.log("MongoDB about to be created");
     showCollections("test");
   });
 
