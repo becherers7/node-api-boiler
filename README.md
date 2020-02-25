@@ -8,3 +8,9 @@ https://dev.mysql.com/downloads/workbench/
 
 ****If you choose the new authentication method on mysql, you will have trouble connecting from node. Run the following cmd
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY ''
+
+Helpful links when installing mongodb:
+https://www.mongodb.com/cloud/atlas/lp/general/try?utm_source=compass&utm_medium=product
+https://www.mongodb.com/download-center/compass
+
+May also want to download mongodb as a service.
