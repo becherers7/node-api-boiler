@@ -16,7 +16,7 @@ https://www.mongodb.com/download-center/compass
 May also want to download mongodb as a service.
 
 # TO USE
-Server.js and Route.js need to be toggled if you want Mongodb set up vs. mysql set up.
+Server.js and Route.js need to have the connection of mongo or mysql toggled if you want Mongodb set up vs. mysql set up.
 
 On node server.js cmd run, mock data will be created in your local db. The table / collection will be dropped if it exists.
 This was intentional as it is boiler plate for building functionality fast. Both mock data creation happens in the respective connectMySql, connectMongo files in resources folder.
