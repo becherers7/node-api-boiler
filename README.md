@@ -7,7 +7,7 @@ https://mid.as/kb/00145/install-configure-mysql-on-windows
 https://dev.mysql.com/downloads/workbench/
 
 ****If you choose the new authentication method on mysql, you will have trouble connecting from node. Run the following cmd
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY ''
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'examplepassword'
 
 Helpful links when installing mongodb:
 https://www.mongodb.com/cloud/atlas/lp/general/try?utm_source=compass&utm_medium=product
