@@ -1,14 +1,32 @@
-mongoose.Promise = global.Promise;
+let mongoose = require("mongoose");
+let dbConnection = require("../config/mongoConfig").connection;
+let User = require("../models/UserModel");
+const mockData = require("./mockData").users;
 
-//Connecting to the database
-mongoose
-  .connect(config.url, {
-    useNewUrlParser: true
-  })
-  .then(() => {
-    console.log("Successfully connected to the database");
-  })
-  .catch(err => {
-    console.log("Could not connect to the database. Exiting now...", err);
-    process.exit();
+exports.default = () => {
+  dbConnection();
+  const connection = mongoose.connection;
+  connection.once("open", function() {
+    console.log("MongoDB successfully about to be created");
+    showCollections("test");
   });
+
+  let showCollections = function(db, callback) {
+    connection.db.listCollections().toArray(function(err, names) {
+      if (err) {
+        console.error("list collections err " + err);
+      } else {
+        for (let i = 0; i < names.length; i++) {
+          connection.db.dropCollection(names[i].name);
+        }
+        for (let i = 0; i < mockData.length; i++) {
+          let newUser = new User(mockData[i]);
+          newUser.save((err, savedUser) => {
+            if (err) return console.error(err);
+            console.log("initial data saved");
+          });
+        }
+      }
+    });
+  };
+};

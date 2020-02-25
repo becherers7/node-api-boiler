@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const connection = require("./resources/connectMySql");
+// const connection = require("./resources/connectMySql");
+const connection = require("./resources/connectMongo");
+
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));

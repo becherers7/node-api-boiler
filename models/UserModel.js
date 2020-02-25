@@ -1,13 +1,9 @@
-const userSchema = new Schema(
-  {
-    id: Integer,
-    firstName: String,
-    lastName: String,
-    career: String
-  },
-  {
-    timestamps: true
-  }
-);
+let mongoose = require("mongoose");
 
-const userModel = mongoose.model("User", userSchema);
+const UserSchema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
+  career: String
+});
+
+module.exports = mongoose.model("User", UserSchema);
