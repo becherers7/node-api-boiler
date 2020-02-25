@@ -42,7 +42,7 @@ exports.findAll = (req, res) => {
 
 // Find a single User with a UserId
 exports.findOne = (req, res) => {
-  User.findById(req.params.UserId)
+  User.findById(req.params.userId)
     .then(User => {
       if (!User) {
         return res.status(404).send({
